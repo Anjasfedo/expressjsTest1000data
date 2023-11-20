@@ -10,11 +10,12 @@ function App() {
     axios.get(`http://localhost:3001/api/data?search=${searchTerm}`)
       .then(response => {
         setData(response.data);
+        console.log(data);
       })
       .catch(error => {
         console.error('Error fetching data:', error);
       });
-  }, [searchTerm]); // Trigger the effect when the search term changes
+  }, [searchTerm]);
 
   return (
     <div>

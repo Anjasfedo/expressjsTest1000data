@@ -5,7 +5,6 @@ const app = express();
 const port = 3001;
 
 app.use(cors());
-
 app.use(express.json());
 
 let dummyData = [];
@@ -26,7 +25,7 @@ app.get('/api/data', (req, res) => {
 
       res.json(filteredData);
     } else {
-      res.json(dummyData);
+      res.json([]); // If no search term, return an empty array
     }
   } catch (error) {
     console.error('Error reading MOCK_DATA.json:', error);
